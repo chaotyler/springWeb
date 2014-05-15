@@ -1,4 +1,4 @@
-package com.tyler.webapp;
+package com.tyler.webapp.model;
 
 public class Student {
 	private long id;

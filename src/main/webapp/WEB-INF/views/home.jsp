@@ -3,6 +3,7 @@
 <html>
 <head>
 	<title>Home</title>
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 </head>
 <body>
 <h1>
