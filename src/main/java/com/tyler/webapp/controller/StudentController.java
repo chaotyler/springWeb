@@ -56,7 +56,7 @@ public class StudentController {
 	
 	//-----------------------------------------------------------------------------------
 	//return json string, used for ajax
-	@RequestMapping(value = "/{id}/json", method = RequestMethod.GET)
+	@RequestMapping(value = "/{id}/json", method = RequestMethod.GET, produces="text/plain;charset=utf-8")
 	@ResponseBody
 	public String getJSON(@PathVariable long id) throws SQLException {
 		Student student = studentDao.getById(id);
@@ -65,7 +65,7 @@ public class StudentController {
 		return stuStr;
 	}
 	
-	@RequestMapping(value = "/json", method = RequestMethod.GET)
+	@RequestMapping(value = "/json", method = RequestMethod.GET, produces="text/plain;charset=utf-8")
 	@ResponseBody
 	public String getAllJSON(){
 		List<Student> stuList = studentDao.getAll();
@@ -74,7 +74,7 @@ public class StudentController {
 		return stuListStr;
 	}
 	
-	@RequestMapping(value = "/json", method = RequestMethod.POST)
+	@RequestMapping(value = "/json", method = RequestMethod.POST, produces="text/plain;charset=utf-8")
 	@ResponseBody
 	public String addJSON(@RequestParam(value="name") String name){
 		Student newStu = new Student();
@@ -86,7 +86,7 @@ public class StudentController {
 		return stuListStr;
 	}
 	
-	@RequestMapping(value = "/delete/{id}/json", method = RequestMethod.GET)
+	@RequestMapping(value = "/delete/{id}/json", method = RequestMethod.GET, produces="text/plain;charset=utf-8")
 	@ResponseBody
 	public String deleteJSON(@PathVariable long id) throws SQLException {
 		boolean result = studentDao.deleteById(id);
